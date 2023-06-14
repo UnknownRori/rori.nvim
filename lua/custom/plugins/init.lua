@@ -34,7 +34,8 @@ return {
 
 
   load_plugin('discord_presence'),
-
+  load_plugin('surround'),
+  load_plugin('trouble'),
   load_plugin('oil'),
   load_plugin('bufferline'),
   load_plugin('terminal'),

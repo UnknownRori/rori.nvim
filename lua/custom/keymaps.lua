@@ -54,12 +54,11 @@ vim.keymap.set('n', '<C-t>', '<cmd>NERDTreeToggle<cr>', { desc = "Nerd tree togg
 vim.keymap.set('n', '<C-f>', '<cmd>NERDTreeFind<cr>', { desc = "Nerd tree find" })
 
 -- Term
-vim.keymap.set('n', '<Leader>t', '<cmd>terminal<cr>', { desc = "Show terminal" } )
 
-vim.keymap.set('n', '<Leader><Leader>t', '<CMD>lua require("FTerm").toggle()<CR>', { desc = "Toggle Float Terminal" })
-vim.keymap.set('t', '<Leader><Leader>t', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', { desc = "Toggle Float Terminal" })
+vim.keymap.set('n', '<Leader>t', '<CMD>lua require("FTerm").toggle()<CR>', { desc = "Toggle Float Terminal" })
+vim.keymap.set('t', '<Leader>t', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', { desc = "Toggle Float Terminal" })
 
-vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = "Exit terminal mode "} )
+-- vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = "Exit terminal mode "} )
 vim.keymap.set('t', 'jk', '<C-\\><C-n>', { desc = "Exit terminal mode "} )
 vim.keymap.set('t', 'jj', '<C-\\><C-n>', { desc = "Exit terminal mode "} )
 vim.keymap.set("t", "<Leader>q", "<cmd>bdelete<cr>", { desc = "Quit the current buffer" })
@@ -86,3 +85,7 @@ vim.keymap.set('n', '<Leader>-', '<cmd>Oil<cr>', { desc = "Open Oil" })
 
 -- Transparency
 vim.keymap.set('n', '<Leader>=', '<cmd>TransparencyToggle<cr>', { desc = "Toggle Transparency" })
+
+-- Trouble
+
+vim.keymap.set('n', '<Leader><leader>t', '<cmd>TroubleToggle workspace_diagnostics<cr>', { desc = "Show workspace diagnostic" } )
