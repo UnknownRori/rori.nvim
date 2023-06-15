@@ -49,5 +49,7 @@ return {
   load_plugin('fold'),
   load_plugin('colorpicker'),
   load_plugin('color_highlight'),
+  load_plugin('markdown'),
+  load_plugin('vimtex'),
 }
 
