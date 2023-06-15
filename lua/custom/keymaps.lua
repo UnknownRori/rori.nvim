@@ -57,6 +57,7 @@ vim.keymap.set('n', '<C-f>', '<cmd>NERDTreeFind<cr>', { desc = "Nerd tree find" 
 
 vim.keymap.set('n', '<Leader>t', '<CMD>lua require("FTerm").toggle()<CR>', { desc = "Toggle Float Terminal" })
 vim.keymap.set('t', '<Leader>t', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', { desc = "Toggle Float Terminal" })
+vim.keymap.set('n', '<Leader>g', '<CMD>lua require("FTerm").run("gitui")<CR>', { desc = "Open gitui" })
 
 -- vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = "Exit terminal mode "} )
 vim.keymap.set('t', 'jk', '<C-\\><C-n>', { desc = "Exit terminal mode "} )
