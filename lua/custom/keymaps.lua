@@ -32,7 +32,7 @@ vim.keymap.set("n", "<C-Left>", ":vertical resize +2<CR>", { desc = "Resize curr
 
 -- Buffer
 vim.keymap.set("n", "<Leader><Leader>l", "<cmd>bnext<cr>", { desc = "Next buffer" })
-vim.keymap.set("n", "<Leader><Leader>h", "<cmd>bnext<cr>", { desc = "Previous buffer" })
+vim.keymap.set("n", "<Leader><Leader>h", "<cmd>bprev<cr>", { desc = "Previous buffer" })
 
 -- Formatting
 -- vim.keymap.set("n", "<C-/>", "gcc", { desc = "Adding comment to the current line" })
