@@ -41,11 +41,8 @@ vim.keymap.set("n", "<Leader><Leader>h", "<cmd>bnext<cr>", { desc = "Previous bu
 vim.keymap.set("v", "<", "<gv", { desc = "Decrease indent" })
 vim.keymap.set("v", ">", ">gv", { desc = "Increase indent" })
 
--- vim.keymap.set("n", "<Space>j", ":m .+1<CR>==", { desc = "" } )
--- vim.keymap.set("n", "<Space>k", ":m .-2<CR>==", { desc = "" } )
-
-vim.keymap.set("v", "<Space>j", ":m .+1<CR>==", { desc = "" } )
-vim.keymap.set("v", "<Space>k", ":m .-2<CR>==", { desc = "" } )
+vim.keymap.set("v", "<Space>j", ":m .+1<CR>==", { desc = "Move line up by 1" } )
+vim.keymap.set("v", "<Space>k", ":m .-2<CR>==", { desc = "Move line down by 1" } )
 
 -- Nerdtree
 vim.keymap.set('n', '<Leader>n', '<cmd>NERDTreeFocus<cr>', { desc = "Nerd tree focus" })
