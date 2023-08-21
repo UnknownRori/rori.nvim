@@ -31,7 +31,8 @@ return {
   'RRethy/vim-illuminate',
   'ray-x/lsp_signature.nvim',
   'nvim-treesitter/nvim-treesitter-context',
-
+  -- 'simrat39/symbols-outline.nvim',
+  'lukas-reineke/indent-blankline.nvim',
 
   load_plugin('discord_presence'),
   load_plugin('surround'),
@@ -51,5 +52,8 @@ return {
   load_plugin('color_highlight'),
   load_plugin('markdown'),
   load_plugin('vimtex'),
+  load_plugin('barbecue'),
+  load_plugin('symbol_outline'),
+  load_plugin('refactor'),
 }
 

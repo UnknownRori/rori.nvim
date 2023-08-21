@@ -85,5 +85,7 @@ vim.keymap.set('n', '<Leader>-', '<cmd>Oil<cr>', { desc = "Open Oil" })
 vim.keymap.set('n', '<Leader>=', '<cmd>TransparencyToggle<cr>', { desc = "Toggle Transparency" })
 
 -- Trouble
-
 vim.keymap.set('n', '<Leader><leader>t', '<cmd>TroubleToggle workspace_diagnostics<cr>', { desc = "Show workspace diagnostic" } )
+
+-- Symbol Outline
+vim.keymap.set('n', '<Leader>so', '<cmd>SymbolsOutline<cr>', { desc = "Show symbol outline" } )
