@@ -7,7 +7,8 @@ vim.keymap.set("i", "jj", "<Esc>", { desc = "Exit insert mode" })
 vim.keymap.set("v", "p", "pgvy", { desc = "Paste without empty paste register" })
 
 -- File operation
-vim.keymap.set("n", "<Leader>w", "<cmd>w<cr>", { desc = "Save the file" })
+vim.keymap.set("n", "<Leader>w", "<cmd>Format<cr><cmd>w<cr>", { desc = "Save the file" })
+vim.keymap.set("n", "<Leader><leader>w", "<cmd>w<cr>", { desc = "Save the file" })
 vim.keymap.set("n", "<Leader>q", "<cmd>bdelete<cr>", { desc = "Quit the current buffer" })
 vim.keymap.set("n", "<Leader><leader>q", "<cmd>q<cr>", { desc = "Quit the window" })
 
@@ -41,8 +42,8 @@ vim.keymap.set("n", "<Leader><Leader>h", "<cmd>bprev<cr>", { desc = "Previous bu
 vim.keymap.set("v", "<", "<gv", { desc = "Decrease indent" })
 vim.keymap.set("v", ">", ">gv", { desc = "Increase indent" })
 
-vim.keymap.set("v", "<Space>j", ":m .+1<CR>==", { desc = "Move line up by 1" } )
-vim.keymap.set("v", "<Space>k", ":m .-2<CR>==", { desc = "Move line down by 1" } )
+vim.keymap.set("v", "<Space>j", ":m .+1<CR>==", { desc = "Move line up by 1" })
+vim.keymap.set("v", "<Space>k", ":m .-2<CR>==", { desc = "Move line down by 1" })
 
 -- Nerdtree
 vim.keymap.set('n', '<Leader>n', '<cmd>NERDTreeFocus<cr>', { desc = "Nerd tree focus" })
@@ -57,8 +58,8 @@ vim.keymap.set('t', '<Leader>t', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<
 vim.keymap.set('n', '<Leader>g', '<CMD>lua require("FTerm").run("gitui")<CR>', { desc = "Open gitui" })
 
 -- vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = "Exit terminal mode "} )
-vim.keymap.set('t', 'jk', '<C-\\><C-n>', { desc = "Exit terminal mode "} )
-vim.keymap.set('t', 'jj', '<C-\\><C-n>', { desc = "Exit terminal mode "} )
+vim.keymap.set('t', 'jk', '<C-\\><C-n>', { desc = "Exit terminal mode " })
+vim.keymap.set('t', 'jj', '<C-\\><C-n>', { desc = "Exit terminal mode " })
 vim.keymap.set("t", "<Leader>q", "<cmd>bdelete<cr>", { desc = "Quit the current buffer" })
 
 vim.keymap.set('t', '<A-h>', '<C-\\><C-N><C-w>h', { desc = "" })
@@ -85,7 +86,8 @@ vim.keymap.set('n', '<Leader>-', '<cmd>Oil<cr>', { desc = "Open Oil" })
 vim.keymap.set('n', '<Leader>=', '<cmd>TransparencyToggle<cr>', { desc = "Toggle Transparency" })
 
 -- Trouble
-vim.keymap.set('n', '<Leader><leader>t', '<cmd>TroubleToggle workspace_diagnostics<cr>', { desc = "Show workspace diagnostic" } )
+vim.keymap.set('n', '<Leader><leader>t', '<cmd>TroubleToggle workspace_diagnostics<cr>',
+  { desc = "Show workspace diagnostic" })
 
 -- Symbol Outline
-vim.keymap.set('n', '<Leader>so', '<cmd>SymbolsOutline<cr>', { desc = "Show symbol outline" } )
+vim.keymap.set('n', '<Leader>so', '<cmd>SymbolsOutline<cr>', { desc = "Show symbol outline" })
