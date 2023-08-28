@@ -56,4 +56,5 @@ return {
   load_plugin('symbol_outline'),
   load_plugin('refactor'),
   load_plugin('harpoon'),
+  load_plugin('leap'),
 }
