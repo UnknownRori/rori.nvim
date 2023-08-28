@@ -3,7 +3,7 @@
 --
 -- See the kickstart.nvim README for more information
 
-function load_plugin (name)
+function load_plugin(name)
   return require('custom.plugins.' .. name)
 end
 
@@ -55,5 +55,5 @@ return {
   load_plugin('barbecue'),
   load_plugin('symbol_outline'),
   load_plugin('refactor'),
+  load_plugin('harpoon'),
 }
-
