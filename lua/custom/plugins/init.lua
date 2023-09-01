@@ -57,4 +57,6 @@ return {
   load_plugin('refactor'),
   load_plugin('harpoon'),
   load_plugin('leap'),
+  load_plugin('undotree'),
+  load_plugin('debug'),
 }
