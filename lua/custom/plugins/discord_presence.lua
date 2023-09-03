@@ -1,5 +1,6 @@
 return {
   'andweeb/presence.nvim',
+  event = "BufReadPost",
   opts = {
     editing_text        = "🛠️ Editing %s",
     file_explorer_text  = "📝 Browsing %s",

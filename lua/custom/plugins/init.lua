@@ -9,7 +9,6 @@ end
 
 return {
   'nvim-tree/nvim-web-devicons',
-  'preservim/nerdtree',
 
   'hrsh7th/nvim-cmp',
   'hrsh7th/cmp-nvim-lsp',
@@ -59,4 +58,6 @@ return {
   load_plugin('leap'),
   load_plugin('undotree'),
   load_plugin('debug'),
+  load_plugin('wakatime'),
+  load_plugin('nerdtree'),
 }
