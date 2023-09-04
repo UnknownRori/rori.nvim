@@ -1,4 +1,4 @@
 return {
   'preservim/nerdtree',
-  event = "VeryLazy",
+  cmd = { "NERDTreeFocus", "NERDTree", "NERDTreeToggle", "NERDTreeFind" },
 }

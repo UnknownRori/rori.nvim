@@ -1,7 +1,7 @@
 if vim.g.neovide then
   vim.g.neovide_scale_factor = 0.8
   vim.api.nvim_create_user_command('FullscreenToggle',
-    function (opts)
+    function(opts)
       vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen
     end,
     {}
@@ -23,23 +23,24 @@ if vim.g.neovide then
   vim.g.neovide_cursor_vfx_mode = "railgun"
 
   local UpdateScale = function(delta)
+    print(delta)
     vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + delta
   end
 
   vim.api.nvim_create_user_command('IncreaseScale',
-    function (opts)
-      UpdateScale(0.05)
+    function(opts)
+      UpdateScale(0.1)
     end,
     {}
   )
 
   vim.api.nvim_create_user_command('DecreaseScale',
-    function (opts)
-      UpdateScale(-0.05)
+    function(opts)
+      UpdateScale(-0.1)
     end,
     {}
   )
 
-  vim.keymap.set({"i", "n"}, "<C-=>", function() UpdateScale(0.5) end, { desc = "Increase scale" })
-  vim.keymap.set({"i", "n"}, "<C-->", function() UpdateScale(-0.5) end, { desc = "Decrease scale" })
+  vim.keymap.set({ "i", "n" }, "<C-=>", "<cmd>IncreaseScale<cr>", { desc = "Increase scale" })
+  vim.keymap.set({ "i", "n" }, "<C-->", "<cmd>DecreaseScale<cr>", { desc = "Decrease scale" })
 end

@@ -115,6 +115,7 @@ require('lazy').setup({
   {
     -- Adds git releated signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
+    event = "BufRead",
     opts = {
       -- See `:help gitsigns.txt`
       signs = {

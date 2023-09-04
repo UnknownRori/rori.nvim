@@ -1,5 +1,6 @@
 return {
   'ThePrimeagen/harpoon',
+  event = "BufRead",
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-telescope/telescope-fzf-native.nvim',
