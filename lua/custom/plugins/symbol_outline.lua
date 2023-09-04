@@ -1,7 +1,8 @@
 return {
   "simrat39/symbols-outline.nvim",
+  event = "BufReadPost",
   opts = {
-  highlight_hovered_item = true,
+    highlight_hovered_item = true,
     show_guides = true,
     auto_preview = false,
     position = 'right',
@@ -16,8 +17,9 @@ return {
     auto_unfold_hover = true,
     fold_markers = { '', '' },
     wrap = false,
-    keymaps = { -- These keymaps can be a string or a table for multiple keys
-      close = {"<Esc>", "q"},
+    keymaps = {
+      -- These keymaps can be a string or a table for multiple keys
+      close = { "<Esc>", "q" },
       goto_location = "<Cr>",
       focus_location = "o",
       hover_symbol = "<C-space>",
