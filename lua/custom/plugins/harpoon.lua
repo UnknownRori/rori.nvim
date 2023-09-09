@@ -12,8 +12,8 @@ return {
     vim.keymap.set('n', '<leader>hq', function() require("harpoon.ui").toggle_quick_menu() end,
       { desc = "Harpoon quick menu" })
 
-    vim.keymap.set('n', '<leader>l', function() require("harpoon.ui").nav_next() end, { desc = "Harpoon next file" })
-    vim.keymap.set('n', '<leader>h', function() require("harpoon.ui").nav_prev() end, { desc = "Harpoon prev file" })
+    vim.keymap.set('n', '<leader>[', function() require("harpoon.ui").nav_next() end, { desc = "Harpoon next file" })
+    vim.keymap.set('n', '<leader>]', function() require("harpoon.ui").nav_prev() end, { desc = "Harpoon prev file" })
 
     for i = 1, 9 do
       vim.keymap.set('n', '<leader>' .. tostring(i), function() require("harpoon.ui").nav_file(i) end,
