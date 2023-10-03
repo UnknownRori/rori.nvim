@@ -17,12 +17,12 @@ return {
   'saadparwaiz1/cmp_luasnip',
   'hrsh7th/cmp-nvim-lua',
   'jose-elias-alvarez/null-ls.nvim',
-  'simrat39/rust-tools.nvim',
+  -- 'simrat39/rust-tools.nvim',
   -- 'jose-elias-alvarez/nvim-lsp-ts-utils',
-  {
-    'p00f/clangd_extensions.nvim',
-    lazy = false,
-  },
+  -- {
+  --   'p00f/clangd_extensions.nvim',
+  --   lazy = true,
+  -- },
 
   'L3MON4D3/LuaSnip',
   'rafamadriz/friendly-snippets',
@@ -60,4 +60,5 @@ return {
   load_plugin('debug'),
   load_plugin('wakatime'),
   load_plugin('nerdtree'),
+  load_plugin('scroll'),
 }
