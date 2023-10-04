@@ -27,12 +27,12 @@ return {
   'L3MON4D3/LuaSnip',
   'rafamadriz/friendly-snippets',
 
-  'RRethy/vim-illuminate',
   'ray-x/lsp_signature.nvim',
   'nvim-treesitter/nvim-treesitter-context',
   -- 'simrat39/symbols-outline.nvim',
-  'lukas-reineke/indent-blankline.nvim',
 
+  load_plugin('illuminate'),
+  load_plugin('indent_blankline'),
   load_plugin('discord_presence'),
   load_plugin('surround'),
   load_plugin('trouble'),
