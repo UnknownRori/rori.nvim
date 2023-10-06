@@ -1,3 +1,17 @@
+local version = vim.version()
+
+if version.major == 0 and version.minor < 10 then
+  return {
+    "petertriho/nvim-scrollbar",
+    event = { "BufReadPost", "BufNewFile" },
+    dependencies = { "lewis6991/gitsigns.nvim" },
+    config = function()
+      require("scrollbar").setup()
+      require("scrollbar.handlers.gitsigns").setup()
+    end
+  }
+end
+
 return {
   "lewis6991/satellite.nvim",
   config = function()
@@ -59,11 +73,4 @@ return {
       },
     }
   end
-  -- "petertriho/nvim-scrollbar",
-  -- event = { "BufReadPost", "BufNewFile" },
-  -- dependencies = { "lewis6991/gitsigns.nvim" },
-  -- config = function()
-  --   require("scrollbar").setup()
-  --   require("scrollbar.handlers.gitsigns").setup()
-  -- end
 }
