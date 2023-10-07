@@ -29,7 +29,6 @@ return {
 
   'ray-x/lsp_signature.nvim',
   'nvim-treesitter/nvim-treesitter-context',
-  -- 'simrat39/symbols-outline.nvim',
 
   load_plugin('illuminate'),
   load_plugin('indent_blankline'),
