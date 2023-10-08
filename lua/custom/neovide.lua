@@ -43,4 +43,5 @@ if vim.g.neovide then
 
   vim.keymap.set({ "i", "n" }, "<C-=>", "<cmd>IncreaseScale<cr>", { desc = "Increase scale" })
   vim.keymap.set({ "i", "n" }, "<C-->", "<cmd>DecreaseScale<cr>", { desc = "Decrease scale" })
+  vim.api.nvim_set_keymap('n', '<F11>', ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
 end
