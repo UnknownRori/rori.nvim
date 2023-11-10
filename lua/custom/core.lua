@@ -13,7 +13,7 @@ vim.o.expandtab = true
 vim.o.smartindent = true
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
-vim.opt.guicursor = 'n-v-c-sm:block'
+vim.opt.guicursor = 'n-v-c-sm:block-blinkwait175-blinkoff150-blinkon175'
 vim.opt.guifont = 'FiraCode Nerd Font'
 
 vim.opt.shell = 'bash'
