@@ -30,7 +30,7 @@ lspconfig.html.setup {
     "pug",
     "svelte",
     "typescriptreact",
-    "vue",
+    -- "vue",
     -- "php",
     -- "blade",
   }
