@@ -177,7 +177,7 @@ require('lazy').setup({
         lualine_a = { 'mode' },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = { 'filename' },
-        lualine_x = { 'encoding', 'filetype', require('custom.lualine').me },
+        lualine_x = { 'fileformat', 'encoding', 'filetype', require('custom.lualine').me },
         lualine_y = { 'progress' },
         lualine_z = { 'location' }
       },

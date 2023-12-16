@@ -90,6 +90,7 @@ lspconfig.tailwindcss.setup {
     "vue",
     "svelte",
     "php",
+    "rust",
   },
   root_pattern = {
     'tailwind.config.js',
@@ -99,6 +100,13 @@ lspconfig.tailwindcss.setup {
     'package.json',
     'node_modules',
     '.git'
+  },
+  init_options = {
+    userLanguages = {
+      eelixir = "html-eex",
+      eruby = "erb",
+      rust = "html",
+    }
   },
   settings = {
     tailwindCSS = {
