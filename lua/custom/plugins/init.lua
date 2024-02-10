@@ -16,7 +16,8 @@ return {
   'hrsh7th/cmp-path',
   'saadparwaiz1/cmp_luasnip',
   'hrsh7th/cmp-nvim-lua',
-  'jose-elias-alvarez/null-ls.nvim',
+  -- 'jose-elias-alvarez/null-ls.nvim',
+  'nvimtools/none-ls.nvim',
   -- 'simrat39/rust-tools.nvim',
   -- 'jose-elias-alvarez/nvim-lsp-ts-utils',
   -- {

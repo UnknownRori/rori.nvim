@@ -1,3 +1,4 @@
+local util = require 'lspconfig.util'
 local lspconfig = require 'lspconfig'
 
 lspconfig.emmet_ls.setup {
@@ -26,12 +27,12 @@ lspconfig.html.setup {
     "eruby",
     "html",
     "htmldjango",
-    "javascriptreact",
+    -- "javascriptreact",
     "pug",
     "svelte",
     "typescriptreact",
     -- "vue",
-    -- "php",
+    "php",
     -- "blade",
   }
 }
@@ -123,6 +124,34 @@ lspconfig.tailwindcss.setup {
       validate = true
     }
   }
+}
+
+lspconfig.gopls.setup {
+  cmd = { 'gopls', '--remote=auto' },
+  capabilties = {
+    textDocuemnt = {
+      completion = {
+        completionItem = {
+          snippetSupport = true
+        }
+      }
+    }
+  },
+  init_options = {
+    usePlaceholders = true,
+    completeUnimported = true
+  },
+  root_dir = function(fname)
+    -- see: https://github.com/neovim/nvim-lspconfig/issues/804
+    local mod_cache = vim.trim(vim.fn.system 'go env GOMODCACHE')
+    if fname:sub(1, #mod_cache) == mod_cache then
+      local clients = vim.lsp.get_active_clients { name = 'gopls' }
+      if #clients > 0 then
+        return clients[#clients].config.root_dir
+      end
+    end
+    return util.root_pattern 'go.work' (fname) or util.root_pattern('go.mod', '.git')(fname)
+  end,
 }
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
