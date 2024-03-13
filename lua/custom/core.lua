@@ -7,6 +7,8 @@ vim.o.wrap = false
 vim.o.smartindent = true
 vim.o.ruler = true
 vim.o.colorcolumn = "80"
+vim.o.cursorline = true   -- For horizontal line
+vim.o.cursorcolumn = true -- For  vertical line
 
 vim.o.shiftround = true
 vim.o.expandtab = true
@@ -20,6 +22,8 @@ vim.opt.shell = 'bash'
 vim.o.shell = 'bash'
 vim.opt.shellcmdflag = '-c'
 vim.opt.termguicolors = true
+vim.o.pumblend = 30
+vim.o.winblend = 30
 
 require('custom.colors').LineNumberColors()
 -- require('custom.colors').CursorLineColors()

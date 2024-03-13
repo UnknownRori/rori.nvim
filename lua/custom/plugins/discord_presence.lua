@@ -1,8 +1,7 @@
 local utils = require('custom.utils')
 
 local function file_text(name)
-  local buf = vim.api.nvim_get_current_buf()
-  local size = vim.fn.getfsize(vim.fn.bufname(buf))
+  local size = utils.get_size_from_buf(vim.api.nvim_get_current_buf())
 
   return "🛠️ " .. name .. " - 📦 " .. utils.format_bytes(size)
 end
