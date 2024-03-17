@@ -15,7 +15,13 @@ local function workspace(name)
       return "Wasting time on my config"
     end
 
-    return "🔨 " .. name
+    local result = "🔨 " .. name
+
+    if utils.is_git_repo() then
+      result = result .. " 🚧 " .. utils.get_git_branch()
+    end
+
+    return result
   end
 
   return "Woopsi, have a nice day :)"
