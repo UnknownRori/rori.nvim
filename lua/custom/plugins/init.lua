@@ -61,4 +61,5 @@ return {
   load_plugin('wakatime'),
   load_plugin('nerdtree'),
   load_plugin('scroll'),
+  load_plugin('lsp_lens'),
 }
