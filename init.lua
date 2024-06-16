@@ -328,6 +328,7 @@ require('telescope').setup {
         ["<C-p>"] = require('telescope.actions').cycle_history_prev,
         ["<C-j>"] = require('telescope.actions').move_selection_next,
         ["<C-k>"] = require('telescope.actions').move_selection_previous,
+        ["<Tab>"] = require('telescope.actions').file_edit,
       },
       n = { q = require('telescope.actions').close },
     },

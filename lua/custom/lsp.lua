@@ -30,7 +30,7 @@ lspconfig.html.setup {
     -- "javascriptreact",
     "pug",
     "svelte",
-    "typescriptreact",
+    -- "typescriptreact",
     -- "vue",
     "php",
     -- "blade",
@@ -170,3 +170,10 @@ vim.filetype.add({
     ['.*%.blade%.php'] = 'blade',
   },
 })
+
+vim.filetype.add({
+  pattern = {
+    ['*.wgsl'] = 'wgsl',
+  },
+})
+lspconfig.wgsl_analyzer.setup()
