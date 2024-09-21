@@ -176,4 +176,4 @@ vim.filetype.add({
     ['*.wgsl'] = 'wgsl',
   },
 })
-lspconfig.wgsl_analyzer.setup()
+-- lspconfig.wgsl_analyzer.setup()

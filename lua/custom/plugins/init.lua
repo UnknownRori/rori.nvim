@@ -8,6 +8,7 @@ function load_plugin(name)
 end
 
 return {
+  "nvim-neotest/nvim-nio",
   'nvim-tree/nvim-web-devicons',
 
   'hrsh7th/nvim-cmp',
