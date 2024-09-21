@@ -57,4 +57,5 @@ return {
   load_plugin('scroll'),
   load_plugin('lsp_lens'),
   load_plugin('flutter'),
+  load_plugin('tailwind'),
 }
