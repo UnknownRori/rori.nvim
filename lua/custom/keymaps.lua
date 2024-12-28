@@ -7,8 +7,9 @@ vim.keymap.set("i", "jj", "<Esc>", { desc = "Exit insert mode" })
 vim.keymap.set("v", "p", "pgvy", { desc = "Paste without empty paste register" })
 
 -- File operation
-vim.keymap.set("n", "<Leader>w", "<cmd>Format<cr><cmd>w<cr>", { desc = "Save the file" })
-vim.keymap.set("n", "<Leader><leader>w", "<cmd>w<cr>", { desc = "Save the file" })
+-- vim.keymap.set("n", "<Leader>w", "<cmd>Format<cr><cmd>w<cr>", { desc = "Save the file" })
+-- vim.keymap.set("n", "<Leader><leader>w", "<cmd>w<cr>", { desc = "Save the file" })
+vim.keymap.set("n", "<Leader>w", "<cmd>w<cr>", { desc = "Save the file" })
 vim.keymap.set("n", "<Leader>q", "<cmd>bdelete<cr>", { desc = "Quit the current buffer" })
 vim.keymap.set("n", "<Leader><leader>q", "<cmd>q<cr>", { desc = "Quit the window" })
 
