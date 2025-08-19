@@ -4,17 +4,14 @@ function colors.LineNumberColors()
   vim.api.nvim_set_hl(0, 'LineNr', { fg = 'white', bold = true })
   vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = '#999966', bold = true })
 
-  vim.api.nvim_set_hl(0, 'CursorLine', { bg = '#0e0e0e', blend = 50 })
-  vim.api.nvim_set_hl(0, 'CursorLineNr', { bg = '#0e0e0e', blend = 50 })
+  vim.api.nvim_set_hl(0, 'CursorLine', { bg = '#0e0e0e', blend = 5 })
+  vim.api.nvim_set_hl(0, 'CursorLineNr', { bg = '#0e0e0e', blend = 5 })
 end
 
-vim.api.nvim_create_user_command('TransparencyToggle',
-  function(opts)
-    vim.cmd('TransparentToggle')
-    colors.LineNumberColors()
-  end,
-  {}
-)
+vim.api.nvim_create_user_command('TransparencyToggle', function(opts)
+  vim.cmd 'TransparentToggle'
+  colors.LineNumberColors()
+end, {})
 
 vim.g.transparent_groups = vim.list_extend(
   vim.g.transparent_groups or {},
