@@ -1,13 +1,13 @@
 vim.g.transparent_enabled = true
-vim.g.transparency = 0.8
+vim.g.transparency = 0.80
 vim.wo.number = true
 vim.o.relativenumber = true
 
 vim.o.wrap = false
 vim.o.smartindent = true
 vim.o.ruler = true
-vim.o.colorcolumn = "80"
-vim.o.cursorline = true   -- For horizontal line
+vim.o.colorcolumn = '80'
+vim.o.cursorline = true -- For horizontal line
 vim.o.cursorcolumn = true -- For  vertical line
 
 vim.o.shiftround = true
@@ -27,6 +27,6 @@ vim.o.winblend = 30
 
 require('custom.colors').LineNumberColors()
 -- require('custom.colors').CursorLineColors()
-require('custom.keymaps')
-require('custom.neovide')
-require('custom.lsp')
+require 'custom.keymaps'
+require 'custom.neovide'
+require 'custom.lsp'
