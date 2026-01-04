@@ -7,6 +7,7 @@ require 'custom.lsp.php'
 require 'custom.lsp.go'
 require 'custom.lsp.haxe'
 require 'custom.lsp.remi'
+require 'custom.lsp.lua'
 
 -- local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
 
