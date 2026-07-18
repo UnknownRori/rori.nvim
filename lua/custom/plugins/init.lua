@@ -11,3 +11,22 @@ for file_name, type in vim.fs.dir(plugins_dir, { follow = true }) do
     require('custom.plugins.' .. module)
   end
 end
+
+return {
+  'nvim-neotest/nvim-nio',
+  'nvim-tree/nvim-web-devicons',
+
+  'hrsh7th/nvim-cmp',
+  'hrsh7th/cmp-nvim-lsp',
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-path',
+  'saadparwaiz1/cmp_luasnip',
+  'hrsh7th/cmp-nvim-lua',
+  'nvimtools/none-ls.nvim',
+
+  'L3MON4D3/LuaSnip',
+  'rafamadriz/friendly-snippets',
+
+  'ray-x/lsp_signature.nvim',
+  'nvim-treesitter/nvim-treesitter-context',
+}
