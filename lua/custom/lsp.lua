@@ -1,5 +1,5 @@
-local util = require 'lspconfig.util'
-local lspconfig = require 'lspconfig'
+-- local util = require 'lspconfig.util'
+-- local lspconfig = require 'lspconfig'
 
 require 'custom.lsp.emmet'
 require 'custom.lsp.tailwind'
