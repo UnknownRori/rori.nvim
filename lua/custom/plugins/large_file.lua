@@ -2,7 +2,7 @@ return {
   'mireq/large_file',
   config = function()
     require('large_file').setup {
-      size_limit = 1024 * 10,
+      size_limit = 1024 * 40,
       buffer_options = {
         swapfile = false,
         bufhidden = 'delete',

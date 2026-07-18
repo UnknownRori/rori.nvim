@@ -59,4 +59,5 @@ return {
   load_plugin 'flutter',
   load_plugin 'tailwind',
   load_plugin 'large_file',
+  load_plugin 'godot',
 }
