@@ -3,8 +3,13 @@
 --
 -- See the kickstart.nvim README for more information
 
-function load_plugin(name)
-  return require('custom.plugins.' .. name)
+-- Iterate over all Lua files in the plugins directory and load them
+local plugins_dir = vim.fs.joinpath(vim.fn.stdpath 'config', 'lua', 'custom', 'plugins')
+for file_name, type in vim.fs.dir(plugins_dir, { follow = true }) do
+  if (type == 'file' or type == 'link') and file_name:match '%.lua$' and file_name ~= 'init.lua' then
+    local module = file_name:gsub('%.lua$', '')
+    require('custom.plugins.' .. module)
+  end
 end
 
 return {
@@ -24,39 +29,4 @@ return {
 
   'ray-x/lsp_signature.nvim',
   'nvim-treesitter/nvim-treesitter-context',
-
-  load_plugin 'illuminate',
-  load_plugin 'indent_blankline',
-  load_plugin 'discord_presence',
-  load_plugin 'surround',
-  load_plugin 'trouble',
-  load_plugin 'oil',
-  load_plugin 'bufferline',
-  load_plugin 'terminal',
-  load_plugin 'autopairs',
-  load_plugin 'dashboard',
-  load_plugin 'todocomment',
-  load_plugin 'notify',
-  load_plugin 'cursorword',
-  load_plugin 'cursorline',
-  load_plugin 'transparent',
-  load_plugin 'fold',
-  load_plugin 'colorpicker',
-  load_plugin 'color_highlight',
-  load_plugin 'markdown',
-  load_plugin 'vimtex',
-  load_plugin 'barbecue',
-  load_plugin 'symbol_outline',
-  load_plugin 'refactor',
-  load_plugin 'harpoon',
-  load_plugin 'leap',
-  load_plugin 'undotree',
-  load_plugin 'debug',
-  load_plugin 'wakatime',
-  load_plugin 'nerdtree',
-  load_plugin 'scroll',
-  load_plugin 'lsp_lens',
-  load_plugin 'flutter',
-  load_plugin 'tailwind',
-  load_plugin 'large_file',
 }
