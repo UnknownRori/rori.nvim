@@ -13,11 +13,19 @@ vim.api.nvim_create_user_command('TransparencyToggle', function(opts)
   colors.LineNumberColors()
 end, {})
 
--- vim.g.transparent_groups = vim.list_extend(
---   vim.g.transparent_groups or {},
---   vim.tbl_map(function(v)
---     return v.hl_group
---   end, vim.tbl_values(require('bufferline.config').highlights))
--- )
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "*",
+  callback = function()
+    vim.api.nvim_set_hl(0, "Normal", { bg = "#181818" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#181818" })
+  end,
+})
+
+vim.g.transparent_groups = vim.list_extend(
+  vim.g.transparent_groups or {},
+  vim.tbl_map(function(v)
+    return v.hl_group
+  end, vim.tbl_values(require('bufferline.config').highlights))
+)
 
 return colors
