@@ -535,11 +535,22 @@ do
     -- You can put your default mappings / updates / etc. in here
     --  All the info you're looking for is in `:help telescope.setup()`
     --
-    -- defaults = {
-    --   mappings = {
-    --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-    --   },
-    -- },
+    defaults = {
+      file_ignore_patterns = {
+        '.git/',
+        '.dart_tool/,',
+      },
+      mappings = {
+        i = {
+          ['<C-n>'] = require('telescope.actions').cycle_history_next,
+          ['<C-p>'] = require('telescope.actions').cycle_history_prev,
+          ['<C-j>'] = require('telescope.actions').move_selection_next,
+          ['<C-k>'] = require('telescope.actions').move_selection_previous,
+          ['<Tab>'] = require('telescope.actions').file_edit,
+        },
+        n = { q = require('telescope.actions').close },
+      },
+    },
     -- pickers = {}
     extensions = {
       ['ui-select'] = { require('telescope.themes').get_dropdown() },
@@ -562,7 +573,7 @@ do
   vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
   vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
   vim.keymap.set('n', '<leader>sc', builtin.commands, { desc = '[S]earch [C]ommands' })
-  vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+  -- vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
   -- Add Telescope-based LSP pickers when an LSP attaches to a buffer.
   -- If you later switch picker plugins, this is where to update these mappings.
@@ -1042,6 +1053,7 @@ do
   require 'custom.core'
   require 'custom.plugins.fs'
   require 'custom.plugins.terminal'
+  require 'custom.plugins.dx'
   require 'custom.plugins.indent'
   require 'custom.plugins.discord'
   require 'custom.plugins.statusline'
@@ -1049,6 +1061,7 @@ do
   require 'custom.plugins.bufferline'
   require 'custom.plugins.scroll'
   require 'custom.plugins.ui'
+  require 'custom.plugins.wakatime'
 end
 
 -- The line beneath this is called `modeline`. See `:help modeline`
