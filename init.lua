@@ -914,6 +914,14 @@ do
       --
       -- See `:help blink-cmp-config-keymap` for defining your own keymap
       preset = 'default',
+      ['<Tab>'] = { 'select_and_accept', 'snippet_forward', 'fallback' },
+      ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
+      ['<C-j>'] = { 'select_next', 'fallback' },
+      ['<C-k>'] = { 'select_prev', 'fallback' },
+      ['<C-e>'] = { 'hide' },
+      ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+      ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
+      ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
 
       -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
       --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
@@ -1067,3 +1075,26 @@ end
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('UserLspConfigKeymaps', { clear = true }),
+  callback = function(event)
+    local map = function(keys, func, desc)
+      vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+    end
+
+    -- Jump to definition (e.g. where the function is declared/defined)
+    map('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+
+    -- Jump to implementation (e.g. the actual body of an interface or virtual function)
+    map('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
+
+    -- Jump to type definition
+    map('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
+
+    -- Find references to the symbol under cursor
+    map('gr', vim.lsp.buf.references, '[G]oto [R]eferences')
+
+    -- Jump back to where you were (Crucial for navigating back)
+    -- Note: Neovim natively handles this via Ctrl+O (back) and Ctrl+I (forward)
+  end,
+})
