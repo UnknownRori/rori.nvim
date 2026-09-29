@@ -476,15 +476,15 @@ do
   -- Simple and easy statusline.
   --  You could remove this setup call if you don't like it,
   --  and try some other statusline plugin
-  local statusline = require 'mini.statusline'
+  -- local statusline = require 'mini.statusline'
   -- Set `use_icons` to true if you have a Nerd Font
-  statusline.setup { use_icons = vim.g.have_nerd_font }
+  -- statusline.setup { use_icons = vim.g.have_nerd_font }
 
   -- You can configure sections in the statusline by overriding their
   -- default behavior. For example, here we set the section for
   -- cursor location to LINE:COLUMN
   ---@diagnostic disable-next-line: duplicate-set-field
-  statusline.section_location = function() return '%2l:%-2v' end
+  -- statusline.section_location = function() return '%2l:%-2v' end
 
   -- ... and there is more!
   --  Check out: https://github.com/nvim-mini/mini.nvim
@@ -722,8 +722,14 @@ do
       -- code, if the language server you are using supports them
       --
       -- This may be unwanted, since they displace some of your code
-      if client and client:supports_method('textDocument/inlayHint', event.buf) then
-        map('<leader>th', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf }) end, '[T]oggle Inlay [H]ints')
+      -- if client and client:supports_method('textDocument/inlayHint', event.buf) then
+      --   map('<leader>th', function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf }) end, '[T]oggle Inlay [H]ints')
+      -- end
+      if client and client.supports_method('textDocument/inlayHint', { bufnr = event.buf }) then
+        map('<leader>th', function()
+          vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
+        end, '[T]oggle Inlay [H]ints')
+        vim.lsp.inlay_hint.enable(true, { bufnr = event.buf })
       end
     end,
   })
@@ -791,7 +797,7 @@ do
 
   -- Translates between nvim-lspconfig server names and mason.nvim package names (e.g. lua_ls <-> lua-language-server)
   require('mason-lspconfig').setup {
-    automatic_enable = false, -- Change this to true if you want to automatically enable servers that are installed manually (e.g. via :Mason / :MasonInstall)
+    automatic_enable = true, -- Change this to true if you want to automatically enable servers that are installed manually (e.g. via :Mason / :MasonInstall)
   }
 
   -- Ensure the servers and tools above are installed
@@ -1034,6 +1040,15 @@ do
   -- require 'custom.plugins.ui'
   -- require 'custom.plugins.git'
   require 'custom.core'
+  require 'custom.plugins.fs'
+  require 'custom.plugins.terminal'
+  require 'custom.plugins.indent'
+  require 'custom.plugins.discord'
+  require 'custom.plugins.statusline'
+  require 'custom.plugins.dashboard'
+  require 'custom.plugins.bufferline'
+  require 'custom.plugins.scroll'
+  require 'custom.plugins.ui'
 end
 
 -- The line beneath this is called `modeline`. See `:help modeline`
